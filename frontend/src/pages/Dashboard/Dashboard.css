@@ -1,0 +1,86 @@
+.dashboard-wrap {
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* === Dashboard Card === */
+.dashboard-card {
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Light Mode */
+.dashboard-container.light .dashboard-card {
+  background: #fff;
+  color: #000;
+}
+
+/* Dark Mode */
+.dashboard-container.dark .dashboard-card {
+  background: #2a2a2a;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+}
+
+/* === Badges === */
+.dashboard-badges ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dashboard-badges li {
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: transform 0.2s ease, background 0.3s, color 0.3s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Light Mode Badges */
+.dashboard-container.light .dashboard-badges li {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  color: #000;
+}
+
+.dashboard-container.light .dashboard-badges li:hover {
+  background: #eef6ff;
+}
+
+/* Dark Mode Badges */
+.dashboard-container.dark .dashboard-badges li {
+  background: #3a3a3a;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+.dashboard-container.dark .dashboard-badges li:hover {
+  background: #4a90e2;
+  color: #fff;
+}
+
+/* === Loading & Error States === */
+.dashboard-loading,
+.dashboard-error {
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.dashboard-container.light .dashboard-loading,
+.dashboard-container.light .dashboard-error {
+  background: #f1f1f1;
+  color: #000;
+}
+
+.dashboard-container.dark .dashboard-loading,
+.dashboard-container.dark .dashboard-error {
+  background: #333;
+  color: #fff;
+}

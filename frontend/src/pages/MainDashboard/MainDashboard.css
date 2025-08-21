@@ -1,0 +1,141 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Light Mode */
+.dashboard-container.light {
+  background: #f9f9f9;
+  color: #000;
+}
+
+/* Dark Mode */
+.dashboard-container.dark {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+/* Sidebar (Desktop Default) */
+.sidebar {
+  width: 220px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background: inherit;
+  border-right: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .logo {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Sidebar Buttons */
+.sidebar button {
+  padding: 12px;
+  margin: 6px 0;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Active Tab */
+.sidebar button.active {
+  background: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Hover Effect */
+.sidebar button:hover {
+  background: rgba(0, 123, 255, 0.2);
+}
+
+/* Theme Toggle Button */
+.sidebar .theme-toggle {
+  margin-top: auto;
+  background: #444;
+  color: #fff;
+  text-align: center;
+}
+
+.dashboard-container.light .sidebar .theme-toggle {
+  background: #ddd;
+  color: #000;
+}
+
+/* Logout Button */
+.sidebar .logout {
+  margin-top: 10px;
+  background: #d9534f;
+  color: white;
+  font-weight: bold;
+}
+
+.sidebar .logout:hover {
+  background: #c9302c;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: inherit;
+  color: inherit;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ===================== */
+/* 📱 Mobile Responsive */
+/* ===================== */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column; /* stack instead of side-by-side */
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-right: none;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    overflow-x: auto;
+    gap: 8px;
+  }
+
+  .sidebar .logo {
+    font-size: 18px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .sidebar button {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap; /* prevent text breaking */
+  }
+
+  .sidebar .theme-toggle,
+  .sidebar .logout {
+    flex: none; /* don’t stretch */
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+}

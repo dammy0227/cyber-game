@@ -1,0 +1,99 @@
+/* GameBoard.css */
+.gameboard-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px;
+}
+
+.gb-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap; /* allow wrapping for mobile */
+}
+
+.gb-title h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.gb-title p {
+  margin: 4px 0 0 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.gb-status {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap; /* ✅ makes lives + progress stack */
+}
+
+.gb-progress {
+  min-width: 200px;
+  flex: 1;
+}
+
+.gb-body {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.gb-loading {
+  text-align: center;
+  padding: 40px 0;
+  opacity: 0.8;
+}
+
+/* ✅ Mobile responsiveness */
+@media (max-width: 768px) {
+  .gb-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .gb-status {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .gb-progress {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .gb-title h2 {
+    font-size: 1.1rem;
+  }
+
+  .gb-title p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gameboard-wrap {
+    padding: 8px;
+    gap: 12px;
+  }
+
+  .gb-body {
+    padding: 12px;
+  }
+
+  .gb-title h2 {
+    font-size: 1rem;
+  }
+
+  .gb-title p {
+    font-size: 0.8rem;
+  }
+}
