@@ -12,7 +12,16 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "https://cyber-game-eight.vercel.app", // your Vercel frontend
+      "http://localhost:5173",               // dev frontend (Vite default)
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // Database

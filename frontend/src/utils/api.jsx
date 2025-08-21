@@ -3,8 +3,9 @@ import axios from "axios";
 
 // Backend base URL (adjust when deployed)
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api",
 });
+
 
 // Attach token to every request
 API.interceptors.request.use((req) => {
